@@ -82,6 +82,14 @@ const chat = ai.chats.create({
         functionDeclarations: [getWeatherDeclaration, getYouBikeData],
       },
     ],
+    toolConfig: {
+      functionCallingConfig: {
+        // AUTO: 讓模型決定是否要呼叫函式
+        // ANY: 每次都呼叫函式
+        // NONE: 從不呼叫函式
+        mode: "AUTO",
+      },
+    },
   },
 });
 
