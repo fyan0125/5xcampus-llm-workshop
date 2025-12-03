@@ -15,6 +15,9 @@ async function getEmbedding(text) {
   const response = await ai.models.embedContent({
     model: "gemini-embedding-001",
     contents: text,
+    config: {
+      dimension: 768, // 可以降低維度以節省成本
+    },
   });
   return response.embeddings[0].values; // 768 維向量
 }
